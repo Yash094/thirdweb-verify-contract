@@ -6,6 +6,10 @@ import { createThirdwebClient } from "thirdweb";
 const client = createThirdwebClient({
   clientId: process.env.THIRDWEB_CLIENT_ID,
 });
+const contractAddress = ""
+const explorerAPIUrl = ""; // e.g. https://api.etherscan.io/api
+const explorerAPIKey = ""; // Generate API key on the explorer
+
 
 const contract = getContract({
   // the client you have created via `createThirdwebClient()`
@@ -13,13 +17,13 @@ const contract = getContract({
   // the chain the contract is deployed on
   chain: ethereum,
   // the contract's address
-  address: "YOUR_CONTRACT_ADDRESS_TO_VERIFY"
+  address: contractAddress
 });
 async function verifyContract() {
 const verificationResult = await verifyContract({
  contract,
- explorerApiUrl: "https://api.polygonscan.com/api",
- explorerApiKey: process.env.EXPLORER_API_KEY,
+ explorerApiUrl: explorerAPIUrl,
+ explorerApiKey: explorerAPIKey,
 });
 }
 verifyContract()
