@@ -1,5 +1,5 @@
 import { getContract } from "thirdweb/contract";
-import { verifyContract } from "thirdweb/contract/verification";
+import { verifyContract } from "thirdweb/contract";
 import { ethereum } from "thirdweb/chains";
 import { createThirdwebClient } from "thirdweb";
 
